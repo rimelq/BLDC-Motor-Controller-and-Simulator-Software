@@ -84,6 +84,3 @@ https://www.ijert.org/research/mathematical-modeling-of-brushless-dc-motor-and-i
 
 https://www.codesansar.com/numerical-methods/ordinary-differential-equation-using-runge-kutta-rk-method-using-c-programming.htm
 
-## TP3 Implementation
-
-Ordinateur preté pendant une pèartie du semestre: plusieurs commits de l'élève pedro.condesalvarelli@epfl.ch ont été fait depuis le git de farouk.himmiche@epfl.ch
