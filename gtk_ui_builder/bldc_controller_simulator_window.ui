@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <template class="BldcControllerSimulatorWindow" parent="GtkApplicationWindow">
+    <property name="title" translatable="yes">BLDC Motor Controller And Simulator</property>
+    <property name="default-width">600</property>
+    <property name="default-height">400</property>
+
+    <child>
+      <object class="GtkBox" id="content_box">
+        <property name="orientation">horizontal</property>
+        <property name="hexpand">TRUE</property>
+        <property name="margin-start">20</property>
+        <property name="margin-top">20</property>
+        <property name="margin-end">20</property>
+        <property name="margin-bottom">20</property>
+        <property name="spacing">20</property>
+
+        <child>
+          <object class="GtkBox" id="sim_setup_box">
+            <property name="orientation">vertical</property>
+            <property name="hexpand">TRUE</property>
+            <property name="vexpand">TRUE</property>
+
+            <child>
+              <object class="GtkBox" id="sim_button_and_label_box">
+                <property name="orientation">vertical</property>
+                <property name="valign">center</property>
+                <property name="vexpand">TRUE</property>
+
+                <child>
+                  <object class="GtkBox" id="sim_button_box">
+                    <property name="orientation">horizontal</property>
+                    <property name="valign">center</property>
+                    <property name="vexpand">FALSE</property>
+                    <property name="homogeneous">TRUE</property>
+                    <property name="spacing">10</property>
+
+                    <child>
+                      <object class="GtkEntry" id="sim_duration_entry">
+                        <property name="xalign">0.98</property>
+                        <property name="placeholder-text">1</property>
+                        
+                        <signal name="changed" handler="on_sim_duration_changed" swapped="no"/>
+                        <signal name="activate" handler="on_sim_duration_enter" swapped="no"/>
+                      </object>
+                    </child>
+
+                    <child>
+                      <object class="GtkButton" id="start_button">
+                        <property name="label">Start Simulation</property>
+
+                        <signal name="clicked" handler="on_start_button_clicked" swapped="no"/>
+                      </object>
+                    </child>
+
+                    <child>
+                      <object class="GtkButton" id="stop_button">
+                        <property name="label">Stop Motor</property>
+
+                        <signal name="clicked" handler="on_stop_button_clicked" swapped="no"/>
+                      </object>
+                    </child>
+
+                  </object>
+                </child>
+
+                <child>
+                  <object class="GtkBox" id="sim_button_label_box">
+                    <property name="orientation">horizontal</property>
+                    <property name="valign">start</property>
+                    <property name="vexpand">False</property>
+                    <property name="homogeneous">TRUE</property>
+                    <property name="spacing">10</property>
+
+                    <child>
+                      <object class="GtkLabel" id="sim_duration_label">
+                        <property name="label">Simulation Duration [s]</property>
+                      </object>
+                    </child>
+
+                    <child>
+                      <object class="GtkLabel" id="start_label">
+                        <property name="label"></property>
+                      </object>
+                    </child>
+
+                    <child>
+                      <object class="GtkLabel" id="stop_label">
+                        <property name="label"></property>
+                      </object>
+                    </child>
+
+                  </object>
+                </child>
+
+              </object>
+            </child>
+
+            <child>
+              <object class="GtkDropDown" id="scenario_dropdown">
+                <property name="model">
+                  <object class="GtkStringList">
+                    <items>
+                      <item translatable="yes">None</item>
+                      <item translatable="yes">Scenario 1</item>
+                      <item translatable="yes">Scenario 2</item>
+                      <item translatable="yes">Scenario 3</item>
+                      <item translatable="yes">Scenario 4</item>
+                    </items>
+                  </object>
+                </property>
+              </object>
+            </child>
+
+            <child>
+              <object class="GtkBox" id="sim_time_and_label_box">
+                <property name="orientation">vertical</property>
+                <property name="valign">center</property>
+                <property name="vexpand">TRUE</property>
+
+                <child>
+                  <object class="GtkLevelBar" id="sim_time_level_bar">
+                    <property name="valign">center</property>
+                    <property name="vexpand">FALSE</property>
+                    <property name="min-value">0</property>
+                  </object>
+                </child>
+
+                <child>
+                  <object class="GtkLabel" id="sim_time_label">
+                    <property name="valign">start</property>
+                    <property name="vexpand">FALSE</property>
+                    <property name="label">Simulation Time</property>
+                  </object>
+                </child>
+
+              </object>
+            </child>
+
+          </object>
+        </child>
+
+        <child>
+          <object class="GtkGrid" id="target_actual_grid">
+            <property name="column-spacing">20</property>
+            <property name="row-spacing">5</property>
+
+            <child>
+              <object class="GtkScale" id="target_scale">
+                <property name="orientation">vertical</property>
+                <property name="inverted">TRUE</property>
+                <property name="draw-value">FALSE</property>
+                <property name="value-pos">left</property>
+                <property name="adjustment">target_scale_adjustement</property>
+                <property name="digits">0</property>
+                <property name="vexpand">TRUE</property>
+
+                <signal name="value-changed" handler="on_target_scale_changed" swapped="no"/>
+
+                <layout>
+                  <property name="column">0</property>
+                  <property name="row">0</property>
+                </layout>
+              </object>
+            </child>
+
+            <child>
+              <object class="GtkLevelBar" id="actual_level_bar">
+                <property name="orientation">vertical</property>
+                <property name="inverted">TRUE</property>
+                <property name="halign">center</property>
+                <property name="min-value">0</property>
+                <property name="max-value">8000</property>
+
+                <layout>
+                  <property name="column">1</property>
+                  <property name="row">0</property>
+                </layout>
+              </object>
+            </child>
+
+            <child>
+              <object class="GtkLabel" id="target_value_label">
+                <property name="label">0</property>
+
+                <layout>
+                  <property name="column">0</property>
+                  <property name="row">1</property>
+                </layout>
+              </object>
+            </child>
+
+            <child>
+              <object class="GtkLabel" id="actual_value_label">
+                <property name="label">0</property>
+
+                <layout>
+                  <property name="column">1</property>
+                  <property name="row">1</property>
+                </layout>
+              </object>
+            </child>
+
+            <child>
+              <object class="GtkLabel" id="target_label">
+                <property name="label">Target RPM [1/min]</property>
+
+                <layout>
+                  <property name="column">0</property>
+                  <property name="row">2</property>
+                </layout>
+              </object>
+            </child>
+
+            <child>
+              <object class="GtkLabel" id="actual_label">
+                <property name="label">Actual RPM [1/min]</property>
+
+                <layout>
+                  <property name="column">1</property>
+                  <property name="row">2</property>
+                </layout>
+              </object>
+            </child>
+
+          </object>
+        </child>
+
+      </object>
+    </child>
+
+  </template>
+
+  <object class="GtkAdjustment" id="target_scale_adjustement">
+    <property name="value">500</property>
+    <property name="lower">0</property>
+    <property name="upper">8000</property>
+    <property name="step-increment">10</property>
+    <property name="page-increment">0</property>
+    <property name="page-size">0</property>
+  </object>
+
+</interface>

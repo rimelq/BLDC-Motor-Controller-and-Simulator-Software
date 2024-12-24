@@ -1,0 +1,9 @@
+.vscode
+.python-version
+logs/
+build/
+config/student_identifier.json
+python/venv*
+python/plots/
+.python-version
+*FORREFERENCEONLY*
