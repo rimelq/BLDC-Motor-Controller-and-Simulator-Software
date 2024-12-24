@@ -4,7 +4,7 @@ This project focuses on the development of a **Brushless DC (BLDC) motor control
 
 ## Key Features
 
-- **Trapezoidal Control Implementation**: Designed and implemented a trapezoidal control approach for efficient and precise motor operations.
+- **Trapezoidal Control Implementation**: Implemented a trapezoidal control approach for efficient and precise motor operations.
 - **PID Controller Optimization**: Refined PID controller logic to enhance motor performance and stability.
 - **Simulation and Testing**:
   - Conducted comprehensive simulation tests, including **fault injection scenarios**, to validate system integrity.
