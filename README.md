@@ -31,10 +31,6 @@ This project focuses on the development of a **Brushless DC (BLDC) motor control
    - Implemented **Safe Torque Off (STO)** to prevent unintended motion during faults.
    - Verified compliance with safety standards through rigorous testing.
 
-## Outcomes
-
-- A reliable BLDC motor control system that meets safety and performance requirements.
-
 ## Build
 
 ```cmake -D CMAKE_BUILD_TYPE=DEBUG -S . -B build && cmake --build build``` from the top project folder.
