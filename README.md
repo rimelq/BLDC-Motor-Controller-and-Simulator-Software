@@ -1,6 +1,39 @@
-# BLDC Controller and Simulator
+# BLDC Motor Control System
 
-This will be the basis for the practical exercices for the Software Architecture Course at EPFL.
+This project focuses on the development of a **Brushless DC (BLDC) motor control system**, integrating motor control algorithms with robust testing and safety measures.
+
+## Key Features
+
+- **Trapezoidal Control Implementation**: Designed and implemented a trapezoidal control approach for efficient and precise motor operations.
+- **PID Controller Optimization**: Refined PID controller logic to enhance motor performance and stability.
+- **Simulation and Testing**:
+  - Conducted comprehensive simulation tests, including **fault injection scenarios**, to validate system integrity.
+  - Ensured adherence to safety protocols, such as **Safe Torque Off (STO)**.
+- **Software Architecture**: Followed critical principles of software architecture to ensure reliability, scalability, and maintainability.
+
+## Objectives
+
+- Develop a robust control system for BLDC motors.
+- Ensure safety and reliability through extensive testing and adherence to industry standards.
+- Enhance precision and stability using optimized control algorithms.
+
+## Methodologies
+
+1. **Motor Control Algorithms**:
+   - Implementation of trapezoidal control for efficient commutation.
+   - Integration of PID controllers for precise speed and torque control.
+
+2. **Testing Framework**:
+   - Developed simulation scenarios to test motor behavior under normal and fault conditions.
+   - Included fault injection tests to evaluate system robustness and safety mechanisms.
+
+3. **Safety Protocols**:
+   - Implemented **Safe Torque Off (STO)** to prevent unintended motion during faults.
+   - Verified compliance with safety standards through rigorous testing.
+
+## Outcomes
+
+- A reliable BLDC motor control system that meets safety and performance requirements.
 
 ## Build
 
